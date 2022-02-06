@@ -1,7 +1,13 @@
+GET http://localhost:3003/api/blogs 
+
+
+###
 POST http://localhost:3003/api/blogs HTTP/1.1
 content-type: application/json
 
 {
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+    "title": "Second Post",
+    "author": "admin",
+    "url": "blogs/1",
+    "likes": 10
 }
