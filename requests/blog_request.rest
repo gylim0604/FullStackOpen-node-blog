@@ -8,6 +8,6 @@ content-type: application/json
 {
     "title": "Second Post",
     "author": "admin",
-    "url": "blogs/1",
-    "likes": 10
+    "url": "blogs/2",
+    "likes": 11
 }
