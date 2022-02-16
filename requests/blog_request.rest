@@ -1,14 +1,18 @@
 GET http://localhost:3003/api/blogs 
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOiI2MjBiYWQ3YjBmYTEyZjI3YjIzNGJjNjUiLCJpYXQiOjE2NDUwMTI3MTl9.6D2xiV0_nk78JYdvMwYs_B5UZtUtbvHRym1V-WdugYw
 
 
 ###
 POST http://localhost:3003/api/blogs HTTP/1.1
 content-type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOiI2MjBiYWQ3YjBmYTEyZjI3YjIzNGJjNjUiLCJpYXQiOjE2NDQ5MzY3MzB9.BP_WVhjSfspyNFeZ6O6H3O-n6QCGcmnmYe2T8iGdEKY
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOiI2MjBiYWQ3YjBmYTEyZjI3YjIzNGJjNjUiLCJpYXQiOjE2NDUwMTI3MTl9.6D2xiV0_nk78JYdvMwYs_B5UZtUtbvHRym1V-WdugYw
 
 {
     "title": "Second Post",
     "author": "admin",
     "url": "blogs/2",
-    "likes": 11
+    "likes":0
 }
+###
+DELETE  http://localhost:3003/api/blogs/620ce9109b6e32e97b12b2e3
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOiI2MjBiYWQ3YjBmYTEyZjI3YjIzNGJjNjUiLCJpYXQiOjE2NDUwMTI3MTl9.6D2xiV0_nk78JYdvMwYs_B5UZtUtbvHRym1V-WdugYw

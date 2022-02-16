@@ -21,12 +21,7 @@ const getTokenFrom = (request) => {
 
 blogsRouter.post('/', async (request, response) => {
     const body = request.body;
-    const token = request.token;
-    const decodedToken = jwt.verify(token, process.env.SECRET);
-    // if (!token || !decodedToken.id) {
-    //     return response.status(401).json({ error: 'token missing or invalid' });
-    // }
-    const user = await User.findById(decodedToken.id);
+    const user = request.user
     const blog = new Blog({
         title: body.title,
         author: body.author,
@@ -43,8 +38,21 @@ blogsRouter.post('/', async (request, response) => {
 });
 
 blogsRouter.delete('/:id', async (request, response) => {
-    await Blog.findByIdAndRemove(request.params.id);
-    response.status(204).end();
+    const user = request.user
+    const blog = await Blog.findById(request.params.id);
+    if (blog.user.toString() === user.id.toString()) {
+        console.log("removing blog")
+        blog.remove();
+        user.blogs = user.blogs.filter((el) => el.id !== request.params.id);
+        await user.save();
+        response
+            .status(204)
+            .json({ status: 'Success', msg: 'Succesfully removed blog' });
+    } else {
+        response
+            .status(400)
+            .json({ status: 'Error', msg: 'Incorrect Permission' });
+    }
 });
 blogsRouter.put('/:id', (request, response, next) => {
     const body = request.body;

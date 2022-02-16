@@ -1,11 +1,15 @@
 GET http://localhost:3003/api/users/
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOiI2MjBiYWQ3YjBmYTEyZjI3YjIzNGJjNjUiLCJpYXQiOjE2NDUwMTI3MTl9.6D2xiV0_nk78JYdvMwYs_B5UZtUtbvHRym1V-WdugYw
 
 ###
 GET http://localhost:3003/api/users/62090c25f2ca3c6d53ba809b
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOiI2MjBiYWQ3YjBmYTEyZjI3YjIzNGJjNjUiLCJpYXQiOjE2NDUwMTI3MTl9.6D2xiV0_nk78JYdvMwYs_B5UZtUtbvHRym1V-WdugYw
 
 ###
 POST http://localhost:3003/api/users
 content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOiI2MjBiYWQ3YjBmYTEyZjI3YjIzNGJjNjUiLCJpYXQiOjE2NDUwMTI3MTl9.6D2xiV0_nk78JYdvMwYs_B5UZtUtbvHRym1V-WdugYw
+
 
 {
     "username": "user1",
