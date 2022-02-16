@@ -7,6 +7,7 @@ const initialBlogs = [
         author: 'Edsger W. Dijkstra',
         url: 'http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html',
         likes: 12,
+        user: '620d1e36a2dfe6edfb984479',
         __v: 0,
     },
     {
@@ -38,6 +39,11 @@ const blogsInDb = async () => {
 };
 
 const initialUsers = [
+    {
+        username: 'admin',
+        name: 'Admin',
+        password: 'admin',
+    },
     {
         username: 'user1',
         name: 'User 1',

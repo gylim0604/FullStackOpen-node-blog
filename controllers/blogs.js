@@ -21,7 +21,7 @@ const getTokenFrom = (request) => {
 
 blogsRouter.post('/', async (request, response) => {
     const body = request.body;
-    const user = request.user
+    const user = request.user;
     const blog = new Blog({
         title: body.title,
         author: body.author,
@@ -38,16 +38,18 @@ blogsRouter.post('/', async (request, response) => {
 });
 
 blogsRouter.delete('/:id', async (request, response) => {
-    const user = request.user
+    const user = request.user;
     const blog = await Blog.findById(request.params.id);
+    console.log(blog.user.toString());
+    
+    console.log(user.id.toString());
     if (blog.user.toString() === user.id.toString()) {
-        console.log("removing blog")
+        console.log('removing blog');
         blog.remove();
+        // TODO: Update blog removal
         user.blogs = user.blogs.filter((el) => el.id !== request.params.id);
         await user.save();
-        response
-            .status(204)
-            .json({ status: 'Success', msg: 'Succesfully removed blog' });
+        response.status(204).end();
     } else {
         response
             .status(400)
